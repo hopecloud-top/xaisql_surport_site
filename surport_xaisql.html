@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XAISQL - 技术支持</title>
+    <style>
+        :root {
+            --gradient-start: #6a11cb;
+            --gradient-end: #2575fc;
+            --text-color: #333333;
+            --section-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-radius: 10px;
+            --spacing: 24px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--section-bg);
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            margin-bottom: var(--spacing);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .app-icon-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .app-icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 24px;
+            background-color: #121212;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+        
+        .xai {
+            font-family: Arial, sans-serif;
+            color: #ff0000;
+            font-size: 44px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+        
+        .sql {
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.5px;
+            text-transform: lowercase;
+            margin-left: 10px;
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            margin: 30px 0 10px;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            margin: 40px 0 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 40px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: var(--gradient-start);
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.25);
+            margin-top: 10px;
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.35);
+        }
+        
+        .instructions-list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions-list li {
+            margin-bottom: 12px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 0;
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 0 30px;
+            }
+            
+            h1 {
+                font-size: 2.3em;
+            }
+            
+            .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="app-icon-container">
+            <div class="app-icon">
+                <div class="logo-container">
+                    <div class="xai">XAI</div>
+                    <div class="sql">sql</div>
+                </div>
+            </div>
+        </div>
+        <h1>XAISQL</h1>
+        <p class="subtitle">人工智能SQL助手，让数据库查询更简单</p>
+    </header>
+    
+    <div class="container">
+        <section>
+            <h2>应用特色</h2>
+            <p>XAISQL是一款革命性的AI辅助SQL工具，通过自然语言对话方式，轻松生成高效SQL查询语句，让数据库操作变得前所未有的简单。</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-title">自然语言对话</div>
+                    <p>直接用日常语言描述需求，AI立即生成精准SQL查询</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <div class="feature-title">先进大语言模型</div>
+                    <p>支持DeepSeek-R1、Qwen等满血高级大语言模型</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡️</div>
+                    <div class="feature-title">即时执行分析</div>
+                    <p>生成的SQL可直接执行并智能分析结果</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">性能优化建议</div>
+                    <p>自动提供SQL性能分析和索引优化专业建议</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-title">数据库可视化</div>
+                    <p>直观展示数据库结构和表间关系</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <div class="feature-title">历史记录管理</div>
+                    <p>自动保存查询历史，支持搜索和重用</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>主要功能</h2>
+            <p>XAISQL专为数据库专业人员、开发者和数据分析师设计，提供全方位的SQL辅助功能：</p>
+            
+            <ul class="instructions-list">
+                <li><strong class="text-gradient">自然语言转SQL</strong> - 只需用普通语言描述需求，AI立即生成精准SQL查询语句</li>
+                <li><strong class="text-gradient">多模型支持</strong> - 集成DeepSeek-R1、Qwen等满血高级大语言模型，保证生成质量</li>
+                <li><strong class="text-gradient">智能性能优化</strong> - 自动提供查询优化建议，包括索引使用和查询结构改进</li>
+                <li><strong class="text-gradient">即时执行分析</strong> - 生成的SQL可直接执行并智能分析结果</li>
+                <li><strong class="text-gradient">数据库可视化</strong> - 直观展示数据库结构和表间关系</li>
+                <li><strong class="text-gradient">历史记录管理</strong> - 自动保存查询历史，支持搜索、筛选和重用</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>即将发布</h2>
+            <p>我们正在努力开发更多令人兴奋的功能，即将推出：</p>
+            
+            <ul class="instructions-list">
+                <li><strong class="text-gradient">全面数据库支持</strong> - 即将支持Oracle、PostgreSQL等主流数据库，打造跨数据库智能查询平台</li>
+                <li><strong class="text-gradient">智能图像识别分析</strong> - 支持从数据表格、业务截图、手绘图表中智能识别并生成精准SQL查询</li>
+                <li><strong class="text-gradient">智能数据分析</strong> - 基于大语言模型的数据分析和洞察，自动生成分析报告和可视化图表</li>
+                <li><strong class="text-gradient">多轮对话支持</strong> - 支持上下文记忆，连续对话优化查询，不断提炼需求</li>
+                <li><strong class="text-gradient">持续更新模型</strong> - 定期集成最新满血大语言模型，持续提升生成质量</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>使用说明</h2>
+            <p>XAISQL设计简洁直观，使用步骤如下：</p>
+            
+            <ol class="instructions-list">
+                <li>添加您的数据库连接（支持MySQL数据库）</li>
+                <li>选择连接后进入查询页面</li>
+                <li>使用自然语言描述您的查询需求</li>
+                <li>系统自动生成SQL查询语句</li>
+                <li>查看结果，必要时进行修改</li>
+                <li>查询自动保存到历史记录中，方便重用</li>
+            </ol>
+            
+            <p>订阅用户可享受每月500次自然语言生成SQL查询额度，以及高级大语言模型和专业性能优化建议。</p>
+        </section>
+        
+        <section>
+            <h2>免责声明</h2>
+            <p>使用XAISQL软件产品时，请注意以下事项：</p>
+            
+            <ul class="instructions-list">
+                <li>XAISQL生成的SQL查询基于AI模型输出，建议用户在执行前检查其正确性和安全性</li>
+                <li>用户需对自己的数据库连接和数据安全负责，我们不存储用户的数据库凭证或敏感信息</li>
+                <li>软件功能会随着版本更新而改进，部分功能可能需要订阅</li>
+                <li>我们不对因软件使用可能导致的任何数据损失或业务中断承担责任</li>
+                <li>用户使用本软件应遵守相关法律法规，不得用于非法用途</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>技术支持</h2>
+            <p>如果您有任何问题、建议或反馈，欢迎通过以下方式联系我们：</p>
+            <p><strong>技术支持邮箱：</strong> <a href="mailto:xaisql@163.com" class="text-gradient">xaisql@163.com</a></p>
+            <p>我们将在1-2个工作日内回复您的邮件。</p>
+            
+            <a href="mailto:xaisql@163.com" class="contact-button">发送邮件</a>
+        </section>
+        
+        <footer>
+            <p>&copy; 2024 XAISQL. 保留所有权利。</p>
+        </footer>
+    </div>
+</body>
+</html>
